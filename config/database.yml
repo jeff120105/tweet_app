@@ -24,26 +24,26 @@
  # <<: *default
   #database: db/production.sqlite3
 #-sqlite-----------------------------------------------------------
+
 default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: postgres
-  password: Koki0512
-  host: localhost
 
 development:
   <<: *default
   database: your_app_development
+  username: postgres
+  password: Koki0512
+  host: localhost
 
 test:
   <<: *default
   database: your_app_test
+  username: postgres
+  password: Koki0512
+  host: localhost
 
 production:
-  <<: *default
-  database: your_app_production
-  username: <%= ENV['PG_USERNAME'] %>
-  password: <%= ENV['PG_PASSWORD'] %>
-  host: <%= ENV['PG_HOST'] %>
+  url: <%= ENV['DATABASE_URL'] %>
 
