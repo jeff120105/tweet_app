@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module SampleApp
   class Application < Rails::Application
+    
+    require 'logger'
+    
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     
