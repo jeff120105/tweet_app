@@ -32,18 +32,19 @@ default: &default
 
 development:
   <<: *default
-  database: your_app_development
+  database: tweet_app_development
   username: postgres
   password: Koki0512
   host: localhost
 
 test:
   <<: *default
-  database: your_app_test
+  database: tweet_app_test
   username: postgres
   password: Koki0512
   host: localhost
 
 production:
+  <<: *default
   url: <%= ENV['DATABASE_URL'] %>
 
